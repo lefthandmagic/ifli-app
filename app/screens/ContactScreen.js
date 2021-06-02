@@ -1,23 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Button, Text, StyleSheet, Linking } from 'react-native';
 
-import defaultStyles from '../config/styles';
 import colors from '../config/colors';
+import Screen from '../components/Screen';
 
 function ContactScreen(props) {
   return (
-    <View style={styles.container}>
+    <Screen style={styles.container}>
         <Text style={styles.text}>Email Us</Text>
-        <Text style={[styles.text, styles.email]}>ifli.national@gmail.com</Text>
-    </View>
+        <Button style={[styles.text, styles.email]} 
+        title="ifli.national@gmail.com"
+        onPress={() => Linking.openURL('mailto:ifli.national@gmail.com') } />
+    </Screen>
     );
 }
 
 const styles = StyleSheet.create({
   container: {
-      paddingTop: 40,
-     justifyContent: "center",
-     alignItems:"center",
+    flex: 0,
+    paddingTop: 20,
+    alignItems:"center",
   },
   text: {
     padding: 10,
