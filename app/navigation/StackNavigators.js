@@ -5,6 +5,7 @@ import IFLIHeader from "../components/IFLIHeader";
 import ApplyScreen from "../screens/ApplyScreen";
 import ContactScreen from "../screens/ContactScreen";
 import HomeScreen from "../screens/HomeScreen";
+import ListingDetailsScreen from "../screens/ListingDetailsScreen";
 
 const ApplyStack = createStackNavigator();
 
@@ -41,6 +42,7 @@ export function HomeNavigator() {
       header: IFLIHeader 
     }}>
     <HomeStack.Screen name="Home" component={HomeScreen} />
+    <HomeStack.Screen name="ListingDetails" component={ListingDetailsScreen} />
   </HomeStack.Navigator>
   )
 }

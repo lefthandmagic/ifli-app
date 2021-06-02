@@ -1,8 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, FlatList } from 'react-native';
+import Card from '../components/Card';
 import Carousel from '../components/Carousel';
 import Social from '../components/social';
-
+import routes from '../navigation/routes';
+import { Divider } from 'react-native-elements';
+import colors from '../config/colors';
 
 
 const images= [
@@ -27,23 +30,29 @@ const images= [
   const listings = [
     {
       id: 1,
-      title: "Who are we",
-      description: "We are an innovative Social startup working towards spreading financial literacy across India! \
-      ​We train underprivileged communities in financial literacy using innovative pedagogical methods. \
-      Making India Financially SMART",
-      buttonText: "Learn More"
-    },
-    {
-      id: 2,
-      title: "",
+      title: "Who are We?",
+      description: "We are an innovative Social startup working towards spreading financial literacy across India!\n​We train underprivileged communities in financial literacy using innovative pedagogical methods.\nMaking India Financially SMART",
     },
   ];
 
-function HomeScreen(props) {
+function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
+        <FlatList
+        data={listings}
+        keyExtractor={(listing) => listing.id.toString()}
+        renderItem={({ item }) => (
+          <Card
+            title={item.title}
+            subTitle={item.description}
+            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
+          />
+        )}
+      />
+      <Divider style={styles.divider} />
         <Text style={styles.text}>Gallery</Text>
         <Carousel images={images} />
+        <Divider style={styles.divider} /> 
         <Social />
       </View>
     );
@@ -51,12 +60,16 @@ function HomeScreen(props) {
 
 const styles = StyleSheet.create({
   container: {
-      justifyContent: "center",
-      alignItems: "center"
+    
+  },
+  divider: {
+      backgroundColor: colors.primary,
+      margin: 10
   },
   text: {
     fontWeight:"bold",
-    marginTop: 10
+    color: colors.primary,
+    padding:20
   }
 });
 

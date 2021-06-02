@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "splash": {
-      "image": "./app/assets/ifli-image.png",
+      "image": "./app/assets/ifli-image_auto_x2.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
