@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "splash": {
-      "image": "./app/assets/ifli-image_auto_x2.png",
+      "image": "./app/assets/ifli_image_transparent.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -14,19 +14,20 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "app/assets/*"
     ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/adaptive-icon.png",
+        "foregroundImage": "./app/assets/ifli_image_transparent.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }

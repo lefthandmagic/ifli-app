@@ -14,7 +14,6 @@ function Social(props) {
         <SocialIcon type='instagram'
             onPress={() => Linking.openURL('https://www.instagram.com/ifli_national/') } />
     </View>
-
   );
 }
 
