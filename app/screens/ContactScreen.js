@@ -3,6 +3,7 @@ import { Button, Text, StyleSheet, Linking } from 'react-native';
 
 import colors from '../config/colors';
 import Screen from '../components/Screen';
+import Social from '../components/social';
 
 function ContactScreen(props) {
   return (
@@ -11,6 +12,7 @@ function ContactScreen(props) {
         <Button style={[styles.text, styles.email]} 
         title="ifli.national@gmail.com"
         onPress={() => Linking.openURL('mailto:ifli.national@gmail.com') } />
+      <Social />
     </Screen>
     );
 }

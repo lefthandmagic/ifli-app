@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView, Image, Dimensions } from 'react-native';
+import { View, StyleSheet, ScrollView, Image, Dimensions, Text } from 'react-native';
+import colors from '../config/colors'
 
 const { width } = Dimensions.get('window');
-const height = width * 0.8
+const height = width * 0.9
 
 function Carousel(props) {
   const { images } = props;
@@ -16,7 +17,12 @@ function Carousel(props) {
           showsHorizontalScrollIndicator={false}
         >
           {images.map(image => (
-            <Image style={styles.image} key={image.id} source={image.source} />
+            <View style={styles.imageContainer} key={image.id}>
+              <Image style={styles.image} source={image.image} />
+              <View style={styles.detailsContainer}>
+                <Text style={styles.text}>{image.header}</Text>
+              </View>
+            </View>
           ))}
         </ScrollView>
       </View>
@@ -32,11 +38,24 @@ const styles = StyleSheet.create({
   scrollContainer: {
     height,
   },
+  imageContainer: {
+  },
   image: {
     width,
-    height,
-    borderRadius:30
+    height : "90%",
+    resizeMode: 'contain',
+    borderRadius: 40
   },
+  text: {
+    color: colors.primary,
+  },
+  subText: {
+    color: colors.secondary,
+    fontSize: 20
+  },
+  detailsContainer: {
+    padding:10
+  }
 });
 
 export default Carousel;
